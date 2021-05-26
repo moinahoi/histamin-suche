@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <title>Beispiel: Eingebettete Histamin-Suche</title>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Beispiel für die Einbettung von Histamin-Suche"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      @font-face {
+        font-family: blokk;
+        src: url("BLOKKNeue-Regular.woff2") format("woff2"),
+          url("BLOKKNeue-Regular.woff") format("woff");
+      }
+      :root {
+        --color-1: #184059;
+        --color-2: #5d8aa6;
+        --color-3: #d8dcde;
+        --color-4: #945b29;
+        --color-5: #8c2f1b;
+        --digest-u: #b3b0b0;
+        --digest-0: #41ce41;
+        --digest-1: #e696a2;
+        --digest-2: #e62f2f;
+        --digest-3: #840000;
+        --color-text: #4d4d4d;
+        --color-text-on-dark: #ffffff;
+        --color-background: #d8dcde;
+        --icon-light: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' style='fill:black'><path d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'/></svg>");
+        --icon-dark: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' style='fill:white'><path d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'/></svg>");
+      }
+      body {
+        font-family: blokk;
+        font-weight: 400;
+        margin: 0;
+        font-size: 1em;
+        background-color: var(--color-background);
+        color: var(--color-text);
+      }
+      * {
+        box-sizing: border-box;
+        font: 1em blokk;
+      }
+      iframe {
+        border: 0;
+      }
+      h1 {
+        font-size: 3em;
+        margin: 0;
+      }
+      .content {
+        position: relative;
+        background-color: var(--color-3);
+      }
+      .section--header {
+        background-color: var(--color-4);
+        color: var(--color-text-on-dark);
+        padding: 2em;
+      }
+      .section--main {
+        background-color: var(--color-3);
+        padding: 0 1em;
+        margin: 1.5em 0;
+        min-height: 50px;
+      }
+      .section--footer {
+        padding: 1em;
+        margin: 1.5em 0 0 0;
+        width: 100%;
+        text-align: center;
+      }
+      .embedd-wrapper {
+        width: 100%;
+        height: 400px;
+        max-height: 75vh;
+        margin: 2em 0;
+        display: block;
+      }
+      .he1 {
+        width: 100%;
+        height: 100%;
+        border: 0.5em solid #88969e;
+      }
+      /* desktop screen */
+      @media screen and (min-width: 800px) {
+        .wrapper {
+          border-radius: 15px;
+          bottom: 0;
+          height: fit-content;
+          left: 0;
+          margin: auto;
+          max-height: 85vh;
+          max-width: 100%;
+          min-height: 250px;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 100%;
+        }
+        .details--page {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 700px;
+          min-height: 250px;
+          max-height: 85vh;
+        }
+        .content {
+          max-width: 700px;
+          width: 700px;
+          margin: 2em auto;
+          -webkit-box-shadow: 0px 4px 16px 1px rgb(112 112 112 / 80%);
+          -moz-box-shadow: 0px 4px 16px 1px rgba(112, 112, 112, 0.8);
+          box-shadow: 0px 4px 16px 1px rgb(112 112 112 / 80%);
+          border-radius: 10px;
+        }
+        .section--header {
+          border-radius: 10px 10px 0 0;
+        }
+        .section--footer {
+          border-radius: 0 0 10px 10px;
+        }
+        .he1 {
+          float: right;
+          width: 300px;
+          height: 400px;
+          margin: 2em;
+        }
+        .embedd-wrapper {
+          display: inline;
+        }
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --color-1: #184059;
+          --color-2: #5d8aa6;
+          --color-3: #d8dcde;
+          --color-4: #bf7b3f;
+          --color-5: #8c2f1b;
+          --digest-u: #b3b0b0;
+          --digest-0: #41ce41;
+          --digest-1: #e696a2;
+          --digest-2: #e62f2f;
+          --digest-3: #840000;
+          --color-text: #4d4d4d;
+          --color-text-on-dark: #ffffff;
+          --color-background: #d8dcde;
+        }
+        a,
+        a:hover,
+        a:active,
+        a:visited {
+          color: var(--color-text);
+        }
+        input[type="search"]::-webkit-search-cancel-button {
+          background: var(--icon-light) no-repeat 50% 50%;
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-1: #184059;
+          --color-2: #5d8aa6;
+          --color-3: #393939;
+          --color-4: #945b29;
+          --color-5: #8c2f1b;
+          --digest-u: #b3b0b0;
+          --digest-0: #36aa36;
+          --digest-1: #ff9fad;
+          --digest-2: #f22828;
+          --digest-3: #8d0101;
+          --color-text: #ffffff;
+          --color-text-on-dark: #ffffff;
+          --color-background: #000000;
+        }
+        a,
+        a:hover,
+        a:active,
+        a:visited {
+          color: var(--color-text-on-dark);
+        }
+        .content {
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+        input {
+          color: var(--color-text-on-dark);
+        }
+        input[type="search"]::-webkit-search-cancel-button {
+          background: var(--icon-dark) no-repeat 50% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="section--header"><h1>Lorem ipsum dolor sit amet</h1></div>
+      <div class="section--main">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div class="embedd-wrapper">
+          <iframe
+            id="histamin-embedd"
+            class="he1"
+            title="Einbetten der Histamin-Suche Website"
+            src="../index.html?embed=1"
+          ></iframe>
+        </div>
+        <p>
+          Vitae elementum curabitur vitae nunc sed velit. Pretium vulputate
+          sapien nec sagittis aliquam malesuada bibendum arcu. Sed faucibus
+          turpis in eu mi bibendum neque egestas. Urna duis convallis convallis
+          tellus id. Enim sed faucibus turpis in eu mi bibendum. Consectetur a
+          erat nam at lectus urna duis convallis convallis. Sed velit dignissim
+          sodales ut. Massa vitae tortor condimentum lacinia quis vel.
+        </p>
+        <p>
+          Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. Quis
+          lectus nulla at volutpat. Ullamcorper a lacus vestibulum sed arcu.
+          Euismod in pellentesque massa placerat duis ultricies lacus.
+          Scelerisque eu ultrices vitae auctor eu augue ut. Vulputate ut
+          pharetra sit amet aliquam id diam maecenas. Mattis rhoncus urna neque
+          viverra justo. Nibh tellus molestie nunc non blandit massa enim nec
+          dui. Tellus rutrum tellus pellentesque eu tincidunt. Eu non diam
+          phasellus vestibulum. Purus in mollis nunc sed id. Risus ultricies
+          tristique nulla aliquet. Lorem ipsum dolor sit amet consectetur.
+        </p>
+        <p>
+          Interdum velit euismod in pellentesque massa placerat duis ultricies
+          lacus. Pulvinar proin gravida hendrerit lectus a. Et ligula
+          ullamcorper malesuada proin. Sit amet cursus sit amet dictum. Non
+          consectetur a erat nam at. A diam sollicitudin tempor id. Eget nulla
+          facilisi etiam dignissim diam quis enim. Convallis posuere morbi leo
+          urna molestie at elementum eu facilisis. Malesuada nunc vel risus
+          commodo viverra maecenas accumsan lacus vel. Eleifend quam adipiscing
+          vitae proin sagittis. Neque viverra justo nec ultrices dui sapien
+          eget.
+        </p>
+      </div>
+      <div class="section--footer">Ut enim ad minim veniam</div>
+    </div>
+  </body>
+</html>
