@@ -1,21 +1,31 @@
 {
   "hosting": {
     "public": "public",
+    "target": "app",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
     "headers": [
-			{
-				"source": "sw.js",
-				"headers": [
-					{
-						"key": "Cache-Control",
-						"value": "max-age=0"
-					}
-				]
-			}
-		]
+      {
+        "source": "sw.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0"
+          }
+        ]
+      }
+    ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4000
+    }
   }
 }
