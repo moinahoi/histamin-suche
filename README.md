@@ -10,7 +10,7 @@ Nothing. No seriously: No build tool needed. It's just vanilla javascript and ba
 - Offline available
 - PWA: Install as app
 - Dark mode
-- Embedded mode: Embed histamine search in your website and enable with `?embed=1`. This works best for sizes up to 800px and uses fullscreen instead of app-like overlays
+- Embed mode: Embed histamine search in your website and enable with `?embed=1`. This works best for sizes up to 800px and uses fullscreen instead of app-like overlays. See [embed readme](/embed/README.md) for more information.
 
 # How to get histamine data, convert from PDF to CSV and convert to JSON
 

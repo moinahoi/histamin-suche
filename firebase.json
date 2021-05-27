@@ -1,6 +1,7 @@
 {
-  "hosting": {
-    "public": "public",
+  "hosting": [
+    {
+    "public": "app",
     "target": "app",
     "ignore": [
       "firebase.json",
@@ -8,6 +9,16 @@
       "**/node_modules/**"
     ]
   },
+  {
+    "public": "embed",
+    "target": "embed",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+],
   "emulators": {
     "hosting": {
       "port": 5000

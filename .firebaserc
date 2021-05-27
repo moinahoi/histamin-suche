@@ -7,6 +7,9 @@
       "hosting": {
         "app": [
           "histamin-suche"
+        ],
+        "embed": [
+          "histamin-suche-embed"
         ]
       }
     }
