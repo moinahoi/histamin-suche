@@ -1,6 +1,16 @@
-# Embedded Histamin-Suche
+# Embed Histamin-Suche
 
-This site is to demonstrate how to embed the Histamin-Suche website in your site. It shows how it performs in a small iframe and which settings you can use to optimize the user experience.
+This site is to demonstrate how to embed the Histamin-Suche website in your site. It shows how it performs in a small iframe and which settings you can use to optimize the user experience. This site uses the hosted Histamin-Suche site at [histamin-suche.web.app](https://histamin-suche.web.app) as this is how it would look like in other site integrations.
+
+# Parameters
+
+You can embed Histamin-Suche without any parameters. This would end in an app-like appearance for device-widths up to 800px. Any devices wider than that are displayed in desktop-mode.
+
+However, Histamin-Suche is best experienced using the `embed` parameter.
+
+## embed
+
+The parameter `?embed=1` switches from an app-like appearance to fullscreen overlays. This makes it less app-in-an-app like and more integrated in your site.
 
 # Font
 
