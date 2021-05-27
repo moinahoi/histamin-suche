@@ -4,7 +4,6 @@ const cacheName = "Histamin-Suche";
 
 // pre-cache PWA on install
 self.addEventListener("install", (e) => {
-  // self.skipWaiting();
   e.waitUntil(
     caches.open(cacheName).then((cache) => {
       return cache.addAll(cacheOnInstall);
