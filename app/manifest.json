@@ -3,8 +3,8 @@
   "name": "Histamin-Suche",
   "lang": "de",
   "description": "Finde die Verträglichkeit von Lebensmittel heraus.",
-  "background_color": "#184059",
-  "theme_color": "#184059",
+  "background_color": "#d8dcde",
+  "theme_color": "#d8dcde",
   "dir": "ltr",
   "display": "standalone",
   "orientation": "any",
@@ -44,7 +44,20 @@
      "sizes": "192x192",
      "type": "image/png",
      "density": "4.0"
-    }
+    },
+    {
+      "src": "/icon/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "density": "4.0"
+     },
+     {
+      "src": "/icon/maskable_icon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": "4.0",
+      "purpose": "maskable"
+     }
    ],
   "prefer_related_applications": false,
   "start_url": "/"

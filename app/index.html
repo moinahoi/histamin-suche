@@ -81,6 +81,7 @@
     <link rel="manifest" href="manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/icon/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#d8dcde" />
     <style type="text/css">
       :root {
         --color-1: #184059;
@@ -546,9 +547,13 @@
           class=""
           href="https://www.mastzellaktivierung.info/downloads/foodlist/11_FoodList_DE_alphabetisch_mitKat.pdf"
           target="_blank"
+          rel="noreferrer"
           >Lebensmittel-Verträglichkeitsliste</a
         >,
-        <a href="https://www.mastzellaktivierung.info" target="_blank"
+        <a
+          href="https://www.mastzellaktivierung.info"
+          target="_blank"
+          rel="noreferrer"
           >Schweizerischen Interessengemeinschaft Histamin-Intoleranz (SIGHI)</a
         >
         <div class="details--substance-name">Hintergrund</div>
@@ -561,6 +566,7 @@
               class=""
               href="https://www.mastzellaktivierung.info/downloads/foodlist/11_FoodList_DE_alphabetisch_mitKat.pdf"
               target="_blank"
+              rel="noreferrer"
               >Lebensmittel-Verträglichkeitsliste</a
             >
             wie die der SIGHI kann dabei helfen. Die große Datenmenge zusammen
@@ -581,10 +587,16 @@
         </div>
         <div class="footer">
           <p>
-            <a href="https://github.com/moinahoi/histamin-suche" target="_blank"
+            <a
+              href="https://github.com/moinahoi/histamin-suche"
+              target="_blank"
+              rel="noreferrer"
               >GitHub</a
             >
-            | <a href="https://www.moinahoi.com" target="_blank">Web</a>
+            |
+            <a href="https://www.moinahoi.com" target="_blank" rel="noreferrer"
+              >Web</a
+            >
           </p>
           <p>made with ♥ by moinahoi</p>
         </div>
@@ -617,15 +629,18 @@
     ></div>
     <div class="content">
       <div class="info" onclick="toggleInfo()">i</div>
-      <div class="section section--header">
+      <header class="section section--header">
         <div class="header">Histamin-Suche</div>
         <div class="source">
           Quelle:
-          <a href="https://www.mastzellaktivierung.info" target="_blank"
+          <a
+            href="https://www.mastzellaktivierung.info"
+            target="_blank"
+            rel="noreferrer"
             >mastzellaktivierung.info</a
           >
         </div>
-      </div>
+      </header>
       <div class="section section--input">
         <input
           id="histamin"
@@ -635,20 +650,26 @@
           placeholder="Suchbegriff"
         />
       </div>
-      <div class="section section--result">
+      <main class="section section--result">
         <div id="result"></div>
-      </div>
-      <div class="section section--footer">
+      </main>
+      <footer class="section section--footer">
         <div class="footer">
           <p>
-            <a href="https://github.com/moinahoi/histamin-suche" target="_blank"
+            <a
+              href="https://github.com/moinahoi/histamin-suche"
+              target="_blank"
+              rel="noreferrer"
               >GitHub</a
             >
-            | <a href="https://www.moinahoi.com" target="_blank">Web</a>
+            |
+            <a href="https://www.moinahoi.com" target="_blank" rel="noreferrer"
+              >Web</a
+            >
           </p>
-          <p>made with ♥ by moinahoi (v1.0)</p>
+          <p>made with ♥ by moinahoi (v1.1)</p>
         </div>
-      </div>
+      </footer>
     </div>
 
     <script>
@@ -851,7 +872,7 @@
         {
           id: 339,
           category: "Pflanzlich",
-          subcategory: "Früchte",
+          subcategory: "Früchte",
           digestibility: 2,
           histamine: "",
           otherAmine: "?",
@@ -863,7 +884,7 @@
         {
           id: 357,
           category: "Pflanzlich",
-          subcategory: "Früchte",
+          subcategory: "Früchte",
           digestibility: 3,
           histamine: "",
           otherAmine: "A",
@@ -885,7 +906,6 @@
           comment: "",
         },
       ];
-
       data = dataSource;
     </script>
   </body>
