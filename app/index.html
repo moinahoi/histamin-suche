@@ -695,16 +695,19 @@
       let reload = document.getElementById("reload");
       let data;
 
-      document.addEventListener("DOMContentLoaded", () => {
-        toggleEmbed();
+      document.addEventListener("DOMContentLoaded", prepareAppForStart);
+      input.addEventListener("keyup", searchForSubstance);
+      reload.addEventListener("click", initializeRefresh);
 
+      function prepareAppForStart() {
+        toggleEmbed();
         input.focus();
-      });
-      input.addEventListener("input", () => searchForSubstance());
-      reload.addEventListener("click", () => {
+      }
+
+      function initializeRefresh() {
         newWorker.postMessage({ action: "skipWaiting" });
         notification.classList.toggle("details--hidden");
-      });
+      }
 
       function toggleEmbed() {
         if (embed && embed == 1) {
@@ -712,21 +715,44 @@
         }
       }
 
-      function searchForSubstance() {
-        if (!data) {
-          console.log("no");
+      function searchForSubstance(e) {
+        if (e.defaultPrevented) {
           return;
         }
+
+        if (!data) {
+          console.log("no data. skip search");
+          return;
+        }
+
+        let key = e.key;
+        let finds;
         let inputValue = input.value.toLocaleLowerCase();
 
         if (inputValue.length < 2) {
           result.innerHTML = "";
           return;
         }
+        if (inputValue.startsWith(":")) {
+          if (key === "Enter") {
+            if (inputValue == ":la") {
+              finds = data;
+            } else if (inputValue.startsWith(":d ") && inputValue.length > 3) {
+              let digestabilities = inputValue
+                .substring(3)
+                .split(",")
+                .map((d) => parseInt(d))
+                .filter(Number.isFinite);
 
-        let finds;
-        if (inputValue == ":la") {
-          finds = data;
+              finds = data.filter((el) =>
+                digestabilities.includes(el.digestibility)
+              );
+            } else {
+              return;
+            }
+          } else {
+            return;
+          }
         } else {
           finds = data.filter(
             (el) => el.substance.toLowerCase().indexOf(inputValue) !== -1
