@@ -1,5 +1,5 @@
 const cacheOnInstall = ["./", "index.html", "icon/favicon-96x96.png"];
-const cacheVersion = "1.3";
+const cacheVersion = "1.4";
 const cacheName = "Histamin-Suche";
 
 // pre-cache PWA on install
