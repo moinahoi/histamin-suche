@@ -202,15 +202,21 @@
         font-weight: 600;
         margin: 0 1.5em 1em 0;
       }
-      .details--halb {
+      .details--halb,
+      .search-command {
+        align-self: flex-start;
         border-radius: 1em;
         line-height: 2em;
         min-height: 2em;
         min-width: 2em;
         padding: 0 0.5em;
         text-align: center;
-        width: fit-content;
+        width: 100%;
         height: fit-content;
+        max-width: fit-content;
+      }
+      .search-command {
+        border-radius: 0.5em;
       }
       .details--comment {
         margin: 1em 0;
@@ -590,6 +596,58 @@
             zentrale Suchfeld ermöglicht eine schnelle Filterung der Ergebnisse
             ohne ablenkende Zwischenschritte, mobil als auch auf Desktop.
           </p>
+        </div>
+        <div class="details--substance-name">Such-Befehle</div>
+        <p>
+          Im Suchfeld können folgende Befehle verwendet werden, um bspw. nach
+          Kategorien oder Verträglichkeiten zu suchen:
+        </p>
+        <div class="substance">
+          <div class="search-command digest-u">:frei</div>
+          <div class="substance--name">
+            Lebensmittel ohne Histamin, andere Amine, Liberatoren oder Blocker.
+          </div>
+        </div>
+        <div class="substance">
+          <div>
+            <div class="search-command digest-u">:gut</div>
+            <div class="search-command digest-u">:ok</div>
+          </div>
+          <div class="substance--name">
+            Lebensmittel mit Verträglichkeitsstufe 0 und ohne Histamin, andere
+            Amine, Liberatoren oder Blocker.
+          </div>
+        </div>
+        <div class="substance">
+          <div class="search-command digest-u">:c</div>
+          <div class="substance--name">
+            Kategorie (category), z.B. "Tierisch", "Pflanzlich", "Getränke",
+            "Zusatzstoffe", "Zubereitungen", "Vitamine, Mineralstoffe,
+            Spurenelemente, Stimulantien". Es kann nach mehreren Kategorien
+            gesucht werden, z.B. ":c Pflanzlich, Getränke"
+          </div>
+        </div>
+        <div class="substance">
+          <div class="search-command digest-u">:sc</div>
+          <div class="substance--name">
+            Unterkategorie (subcategory), z.B. "Zusatzstoffe", "Zubereitungen",
+            "Milchersatz", "alkoholhaltige", "Tee", "Würzen, Gewürze", "Wasser",
+            "Pilze und Algen", "Süssungsmittel", "Früchte", "Samen, Kerne",
+            "Gemüse", "Küchenkräuter", "Nüsse", "Fette und Öle",
+            "Meeresfrüchte", "Stärkelieferanten", "Fleisch", "Fisch", "Eier",
+            "Milchprodukte", "Fruchtsäfte, Nektare", "Gemüsesäfte",
+            "Koffeingetränke", "Süssgetränke, Limonaden", "Vitamine,
+            Mineralstoffe, Spurenelemente, Stimulantien". Es kann nach mehreren
+            Unterkategorien gesucht werden, z.B. ":sc Früchte, Tee"
+          </div>
+        </div>
+        <div class="substance">
+          <div class="search-command digest-u">:halb</div>
+          <div class="substance--name">
+            Suche nach Lebensmittel mit Histamin, anderen Aminen, Liberatoren
+            oder Blocker. Es kann auch einzeln danach gesucht werden, z.B. ":h"
+            nach Histamin oder ":ab" nach anderen Aminen oder Blockern.
+          </div>
         </div>
         <div class="footer">
           <p>
