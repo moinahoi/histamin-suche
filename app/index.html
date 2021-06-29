@@ -774,7 +774,11 @@
                   !el.blocker &&
                   !el.liberator
               );
-            } else if (inputValue === ":unbedenklich") {
+            } else if (
+              inputValue === ":unbedenklich" ||
+              inputValue === ":gut" ||
+              inputValue === ":ok"
+            ) {
               finds = data.filter(
                 (el) =>
                   el.digestibility === 0 &&
