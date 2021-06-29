@@ -738,7 +738,7 @@
         }
         if (inputValue.startsWith(":")) {
           if (key === "Enter") {
-            if (inputValue == ":la") {
+            if (inputValue === ":listall") {
               finds = data;
             } else if (inputValue.startsWith(":d ") && inputValue.length > 3) {
               let digestabilities = inputValue
@@ -757,6 +757,92 @@
                 .map((el) => el.trim());
               finds = data.filter((el) =>
                 categories.includes(el.category.toLocaleLowerCase())
+              );
+            } else if (inputValue.startsWith(":sc ") && inputValue.length > 4) {
+              let categories = inputValue
+                .substring(3)
+                .split(",")
+                .map((el) => el.trim());
+              finds = data.filter((el) =>
+                categories.includes(el.subcategory.toLocaleLowerCase())
+              );
+            } else if (inputValue === ":frei") {
+              finds = data.filter(
+                (el) =>
+                  !el.histamine &&
+                  !el.otherAmine &&
+                  !el.blocker &&
+                  !el.liberator
+              );
+            } else if (inputValue === ":unbedenklich") {
+              finds = data.filter(
+                (el) =>
+                  el.digestibility === 0 &&
+                  !el.histamine &&
+                  !el.otherAmine &&
+                  !el.blocker &&
+                  !el.liberator
+              );
+            } else if (inputValue === ":h") {
+              finds = data.filter((el) => el.histamine);
+            } else if (inputValue === ":a") {
+              finds = data.filter((el) => el.otherAmine);
+            } else if (inputValue === ":l") {
+              finds = data.filter((el) => el.liberator);
+            } else if (inputValue === ":b") {
+              finds = data.filter((el) => el.blocker);
+            } else if (inputValue === ":ha" || inputValue === ":ah") {
+              finds = data.filter((el) => el.histamine || el.otherAmine);
+            } else if (inputValue === ":hl" || inputValue === ":lh") {
+              finds = data.filter((el) => el.histamine || el.liberator);
+            } else if (inputValue === ":hb" || inputValue === ":bh") {
+              finds = data.filter((el) => el.histamine || el.blocker);
+            } else if (inputValue === ":al" || inputValue === ":la") {
+              finds = data.filter((el) => el.otherAmine || el.liberator);
+            } else if (inputValue === ":ab" || inputValue === ":ba") {
+              finds = data.filter((el) => el.otherAmine || el.blocker);
+            } else if (inputValue === ":lb" || inputValue === ":bl") {
+              finds = data.filter((el) => el.liberator || el.blocker);
+            } else if (
+              inputValue === ":hal" ||
+              inputValue === ":hla" ||
+              inputValue === ":ahl" ||
+              inputValue === ":alh" ||
+              inputValue === ":lah" ||
+              inputValue === ":lha"
+            ) {
+              finds = data.filter(
+                (el) => el.histamine || el.otherAmine || el.liberator
+              );
+            } else if (
+              inputValue === ":halb" ||
+              inputValue === ":habl" ||
+              inputValue === ":hlab" ||
+              inputValue === ":hlba" ||
+              inputValue === ":hbal" ||
+              inputValue === ":hbla" ||
+              inputValue === ":ahlb" ||
+              inputValue === ":ahbl" ||
+              inputValue === ":alhb" ||
+              inputValue === ":albh" ||
+              inputValue === ":abhl" ||
+              inputValue === ":ablh" ||
+              inputValue === ":lbah" ||
+              inputValue === ":lbha" ||
+              inputValue === ":labh" ||
+              inputValue === ":lahb" ||
+              inputValue === ":lhab" ||
+              inputValue === ":lhba" ||
+              inputValue === ":bahl" ||
+              inputValue === ":balh" ||
+              inputValue === ":bhal" ||
+              inputValue === ":bhla" ||
+              inputValue === ":blah" ||
+              inputValue === ":blha"
+            ) {
+              finds = data.filter(
+                (el) =>
+                  el.histamine || el.otherAmine || el.liberator || el.blocker
               );
             } else {
               return;
