@@ -16,7 +16,7 @@ Nothing. No seriously: No build tool needed. It's just vanilla javascript and ba
 
 - `:listall`: list all. Lists all data in the database
 - `:frei`: Lists all data without histamine, other amine, liberator or blocker marker
-- `:unbedenklich`: Lists all data with digestability score `0` and without histamine, other amine, liberator or blocker markers
+- `:unbedenklich`, `:gut`, `:ok`: Lists all data with digestability score `0` and without histamine, other amine, liberator or blocker markers
 - `:d`: digestability. Lists all data with the given digestability score. Use numbers `0`, `1`, `2`, `3` for the corresponding digestability score from `very good` to `very bad`. Example: `:d 0` will list every substance with digestability score `0 - very good`. Chain digestabilities to include more scores, e.g. `:d 0,1,2` will list scores `0`, `1` and `2` but filters out `4 - very bad`.
 - `:c`: category. Lists all data with the given category, e.g. `Tierisch`,`Pflanzlich`,`Getränke`,`Zusatzstoffe`,`Zubereitungen`,`Vitamine, Mineralstoffe, Spurenelemente, Stimulantien`. Chain categories to include more, e.g. `:c Pflanzlich, Getränke` will include both categories and filter out the others.
 - `:sc`: subcategory. Lists all data with the given subcategory, e.g. `Zusatzstoffe`,`Zubereitungen`,`Milchersatz`,`alkoholhaltige`,`Tee`,`Würzen, Gewürze`,`Wasser`,`Pilze und Algen`,`Süssungsmittel`,`Früchte`,`Samen, Kerne`,`Gemüse`,`Küchenkräuter`,`Nüsse`,`Fette und Öle`,
