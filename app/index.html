@@ -750,6 +750,14 @@
               finds = data.filter((el) =>
                 digestabilities.includes(el.digestibility)
               );
+            } else if (inputValue.startsWith(":c ") && inputValue.length > 3) {
+              let categories = inputValue
+                .substring(3)
+                .split(",")
+                .map((el) => el.trim());
+              finds = data.filter((el) =>
+                categories.includes(el.category.toLocaleLowerCase())
+              );
             } else {
               return;
             }
