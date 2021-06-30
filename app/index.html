@@ -799,7 +799,11 @@
         }
         if (inputValue.startsWith(":")) {
           if (key === "Enter") {
-            if (inputValue === ":listall") {
+            if (
+              inputValue === ":listall" ||
+              inputValue === ":listealle" ||
+              inputValue === ":alle"
+            ) {
               finds = data;
             } else if (inputValue.startsWith(":d ") && inputValue.length > 3) {
               let digestabilities = inputValue
