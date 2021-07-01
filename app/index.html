@@ -171,7 +171,6 @@
       }
       .details--page {
         position: fixed;
-        height: calc(100% - 155px);
         top: 155px;
         left: 0;
         width: 100%;
@@ -182,16 +181,13 @@
       .embedded .details--page {
         top: 0;
       }
-      .details--header {
-        height: 100px;
-      }
       .wrapper {
-        /* position: absolute; */
-        /* top: 0; */
+        position: absolute;
+        top: 0;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
         width: 100%;
-        height: calc(100% - 255px);
+        height: calc(100% - 155px);
         overflow: auto;
         padding: 1em 1em 0.1em 1em;
         background-color: var(--color-3);
@@ -682,11 +678,9 @@
       class="details--page details--hidden"
       onClick="hideDetails()"
     >
-      <div class="details--header">
-        <div id="details--substance-name" class="details--substance-name"></div>
-      </div>
       <div class="wrapper">
         <div class="info">x</div>
+        <div id="details--substance-name" class="details--substance-name"></div>
         <div id="details--halb" class="details--halb"></div>
         <div id="details--comment-header" class="details--comment-header">
           Kommentar
@@ -1059,7 +1053,7 @@
           blocker: "",
           substance: "Eier, Hühnerei, Vollei",
           comment:
-            "Eigelb ist verträglich, Eiklar kann vor allem roh, aber auch gekocht mastzellaktivierend sein. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+            "Eigelb ist verträglich, Eiklar kann vor allem roh, aber auch gekocht mastzellaktivierend sein",
         },
         {
           id: 148,
