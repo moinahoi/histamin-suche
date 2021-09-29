@@ -1,5 +1,7 @@
 # Histamin-Suche
 
+![Histamin-Suche im light mode](/marketing/store/light_mode.png "Histamin-Suche (light mode)")
+
 # Pre-Requisites
 
 Nothing. No seriously: No build tool needed. It's just vanilla javascript and basic HTML plus CSS - all in one file (except for the manifest and service worker file).
