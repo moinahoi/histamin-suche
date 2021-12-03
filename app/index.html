@@ -9,78 +9,26 @@
       content="Finde die Verträglichkeit von Lebensmittel heraus."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="apple-touch-icon"
-      sizes="57x57"
-      href="/icon/apple-icon-57x57.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="60x60"
-      href="/icon/apple-icon-60x60.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="72x72"
-      href="/icon/apple-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="/icon/apple-icon-76x76.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="/icon/apple-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="/icon/apple-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="/icon/apple-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="/icon/apple-icon-152x152.png"
-    />
+    <link rel="icon" href="icon/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="icon/apple-touch-icon.png" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/icon/apple-icon-180x180.png"
+      href="icon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="/icon/android-icon-192x192.png"
+      href="icon/icon-192.png"
     />
     <link
       rel="icon"
       type="image/png"
-      sizes="32x32"
-      href="/icon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="/icon/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/icon/favicon-16x16.png"
+      sizes="512x512"
+      href="icon/icon-512.png"
     />
     <link rel="manifest" href="manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/icon/ms-icon-144x144.png" />
     <meta name="theme-color" content="#d8dcde" />
     <style type="text/css">
       :root {
@@ -100,6 +48,9 @@
         --icon-light: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' style='fill:black'><path d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'/></svg>");
         --icon-dark: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' style='fill:white'><path d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'/></svg>");
       }
+      html {
+        height: 100%;
+      }
       body {
         font-family: sans-serif;
         font-weight: 400;
@@ -107,6 +58,7 @@
         font-size: 1em;
         background-color: var(--color-background);
         color: var(--color-text);
+        height: 100%;
       }
       * {
         box-sizing: border-box;
@@ -170,27 +122,46 @@
         visibility: hidden;
       }
       .details--page {
+        background-color: var(--color-3);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
         position: fixed;
+        height: calc(100% - 155px);
         top: 155px;
         left: 0;
         width: 100%;
-        height: 100%;
         max-height: 100%;
         z-index: 1010;
       }
       .embedded .details--page {
         top: 0;
+        border-radius: 0;
+        height: 100%;
+      }
+      .details--header {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        padding: 1em;
+        height: 8em;
+      }
+      .embedded .details--header {
+        border-radius: 0;
+      }
+      .details--header-title {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin: 0 1.5rem 0 0;
+        line-height: 1.5rem;
+        height: 4rem;
+        display: block;
+      }
+      #details--comment {
+        height: calc(100% - 8em);
       }
       .wrapper {
-        position: absolute;
-        top: 0;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
+        padding: 1em 1em 1em 1em;
         width: 100%;
-        height: calc(100% - 155px);
         overflow: auto;
-        padding: 1em 1em 0.1em 1em;
-        background-color: var(--color-3);
       }
       .embedded .wrapper {
         height: 100%;
@@ -217,9 +188,6 @@
       }
       .search-command {
         border-radius: 0.5em;
-      }
-      .details--comment {
-        margin: 1em 0;
       }
       .details--comment-header {
         font-weight: 600;
@@ -259,6 +227,7 @@
         padding: 0 1em;
         margin: 3.5em 0;
         min-height: 50px;
+        flex-grow: 2;
       }
       .section--footer {
         padding: 0 1em 0.1em 1em;
@@ -267,8 +236,10 @@
       .content {
         background-color: var(--color-3);
         position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
       }
-
       .header {
         font-size: 1.5em;
         font-weight: 600;
@@ -361,28 +332,16 @@
       }
       /* desktop screen */
       @media screen and (min-width: 800px) {
-        .wrapper {
-          border-radius: 15px;
-          bottom: 0;
-          height: fit-content;
-          left: 0;
-          margin: auto;
-          max-height: 85vh;
-          max-width: 100%;
-          min-height: 250px;
-          position: absolute;
-          right: 0;
-          top: 0;
-          width: 100%;
-        }
         .details--page,
         .embedded .details--page {
+          border-radius: 15px;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
           width: 700px;
           min-height: 250px;
           max-height: calc(100vh - 4em);
+          height: fit-content;
         }
         .content {
           max-width: 700px;
@@ -393,6 +352,7 @@
           -moz-box-shadow: 0px 4px 16px 1px rgba(112, 112, 112, 0.8);
           box-shadow: 0px 4px 16px 1px rgb(112 112 112 / 80%);
           border-radius: 10px;
+          min-height: calc(100% - 4em);
         }
         .section--header {
           border-radius: 10px 10px 0 0;
@@ -474,197 +434,179 @@
         <a id="reload" class="link">Aktualisieren</a>
       </div>
     </div>
-    <div id="info--page" class="details--page details--hidden">
-      <div class="wrapper">
-        <div class="info" onclick="toggleInfo()">x</div>
-        <div class="details--substance-name">Verträglichkeitsskala</div>
-        <div class="substance">
-          <div class="digest digest-0"></div>
-          <div class="substance--name">
-            Gut verträglich. Bei üblicher Verzehrmenge sind keinerlei Symptome
-            zu erwarten
-          </div>
+    <div id="info--page" class="details--page wrapper details--hidden">
+      <div class="info" onclick="toggleInfo()">x</div>
+      <div class="details--substance-name">Verträglichkeitsskala</div>
+      <div class="substance">
+        <div class="digest digest-0"></div>
+        <div class="substance--name">
+          Gut verträglich. Bei üblicher Verzehrmenge sind keinerlei Symptome zu
+          erwarten
         </div>
-        <div class="substance">
-          <div class="digest digest-1"></div>
-          <div class="substance--name">
-            Mässig verträglich, geringfügige Symptome, gelegentlicher Konsum
-            kleiner Mengen wird oft toleriert
-          </div>
+      </div>
+      <div class="substance">
+        <div class="digest digest-1"></div>
+        <div class="substance--name">
+          Mässig verträglich, geringfügige Symptome, gelegentlicher Konsum
+          kleiner Mengen wird oft toleriert
         </div>
-        <div class="substance">
-          <div class="digest digest-2"></div>
-          <div class="substance--name">
-            Unverträglich, deutliche Symptome bei üblicher Verzehrsmenge
-          </div>
+      </div>
+      <div class="substance">
+        <div class="digest digest-2"></div>
+        <div class="substance--name">
+          Unverträglich, deutliche Symptome bei üblicher Verzehrsmenge
         </div>
-        <div class="substance">
-          <div class="digest digest-3"></div>
-          <div class="substance--name">
-            Sehr schlecht verträglich, heftige Symptome
-          </div>
+      </div>
+      <div class="substance">
+        <div class="digest digest-3"></div>
+        <div class="substance--name">
+          Sehr schlecht verträglich, heftige Symptome
         </div>
-        <div class="substance">
-          <div class="digest digest-u"></div>
-          <div class="substance--name">
-            Keine allgemeingültige Aussage möglich
-          </div>
+      </div>
+      <div class="substance">
+        <div class="digest digest-u"></div>
+        <div class="substance--name">
+          Keine allgemeingültige Aussage möglich
         </div>
-        <div class="substance">
-          <div class="digest digest-0 digest-with-comment"></div>
-          <div class="substance--name">
-            Ein Ring gibt an, dass es weitere Kommentare zu diesem Lebensmittel
-            gibt
-          </div>
+      </div>
+      <div class="substance">
+        <div class="digest digest-0 digest-with-comment"></div>
+        <div class="substance--name">
+          Ein Ring gibt an, dass es weitere Kommentare zu diesem Lebensmittel
+          gibt
         </div>
-        <div class="details--substance-name">HALB-Zuordnung</div>
-        <div class="substance">
-          <div class="details--halb digest-2">?</div>
-          <div class="substance--name">
-            Ungenügende oder widersprüchliche Informationen
-          </div>
+      </div>
+      <div class="details--substance-name">HALB-Zuordnung</div>
+      <div class="substance">
+        <div class="details--halb digest-2">?</div>
+        <div class="substance--name">
+          Ungenügende oder widersprüchliche Informationen
         </div>
-        <div class="substance">
-          <div class="details--halb digest-2">H!</div>
-          <div class="substance--name">
-            Hoch Verderblich, rasche Histaminbildung
-          </div>
+      </div>
+      <div class="substance">
+        <div class="details--halb digest-2">H!</div>
+        <div class="substance--name">
+          Hoch Verderblich, rasche Histaminbildung
         </div>
-        <div class="substance">
-          <div class="details--halb digest-2">H</div>
-          <div class="substance--name">Hoher Histamingehalt</div>
+      </div>
+      <div class="substance">
+        <div class="details--halb digest-2">H</div>
+        <div class="substance--name">Hoher Histamingehalt</div>
+      </div>
+      <div class="substance">
+        <div class="details--halb digest-2">A</div>
+        <div class="substance--name">Andere biogene Amine</div>
+      </div>
+      <div class="substance">
+        <div class="details--halb digest-2">L</div>
+        <div class="substance--name">
+          Liberatoren von Mastzellmediatoren (=Histaminliberatoren)
         </div>
-        <div class="substance">
-          <div class="details--halb digest-2">A</div>
-          <div class="substance--name">Andere biogene Amine</div>
+      </div>
+      <div class="substance">
+        <div class="details--halb digest-2">B</div>
+        <div class="substance--name">
+          Blocker (=Hemmstoffe) der Diaminoxidase oder anderer Histamin
+          abbauender Enzyme
         </div>
-        <div class="substance">
-          <div class="details--halb digest-2">L</div>
-          <div class="substance--name">
-            Liberatoren von Mastzellmediatoren (=Histaminliberatoren)
-          </div>
-        </div>
-        <div class="substance">
-          <div class="details--halb digest-2">B</div>
-          <div class="substance--name">
-            Blocker (=Hemmstoffe) der Diaminoxidase oder anderer Histamin
-            abbauender Enzyme
-          </div>
-        </div>
-        <div class="details--substance-name">Quellen</div>
+      </div>
+      <div class="details--substance-name">Quellen</div>
+      <p>
+        <a
+          class=""
+          href="https://www.mastzellaktivierung.info/downloads/foodlist/11_FoodList_DE_alphabetisch_mitKat.pdf"
+          target="_blank"
+          rel="noreferrer"
+          >Lebensmittel-Verträglichkeitsliste</a
+        >,
+        <a
+          href="https://www.mastzellaktivierung.info"
+          target="_blank"
+          rel="noreferrer"
+          >Schweizerischen Interessengemeinschaft Histamin-Intoleranz (SIGHI)</a
+        >
+      </p>
+      <div class="details--substance-name">Hintergrund</div>
+      <div class="details--comment">
         <p>
+          Eine Umstellung auf eine Histamin-arme Ernährung kann sehr
+          einschneidend sein. Gerade am Anfang steht häufig die Frage: Was kann
+          ich noch essen? Eine
           <a
             class=""
             href="https://www.mastzellaktivierung.info/downloads/foodlist/11_FoodList_DE_alphabetisch_mitKat.pdf"
             target="_blank"
             rel="noreferrer"
             >Lebensmittel-Verträglichkeitsliste</a
-          >,
-          <a
-            href="https://www.mastzellaktivierung.info"
-            target="_blank"
-            rel="noreferrer"
-            >Schweizerischen Interessengemeinschaft Histamin-Intoleranz
-            (SIGHI)</a
           >
+          wie die der SIGHI kann dabei helfen. Die große Datenmenge zusammen mit
+          der mehrstufigen Verträglichkeitsskala unterstützt bei der Navigation.
+          Die Usability der PDF-Datei ist jedoch gerade auf dem Smartphone
+          unzufriedenstellend: Die Suche nach einem bestimmten Lebensmittel
+          filtert nicht auf gefundene Einträge, sondern springt zwischen den
+          Ergebnissen; eine schnelle Übersicht ist nicht gegeben und auch der
+          Zugriff selbst auf die PDF-Datei ist umständlich.
         </p>
-        <div class="details--substance-name">Hintergrund</div>
-        <div class="details--comment">
-          <p>
-            Eine Umstellung auf eine Histamin-arme Ernährung ist sehr
-            einschneidend. Gerade am Anfang steht häufig die Frage: Was kann ich
-            noch essen? Eine
-            <a
-              class=""
-              href="https://www.mastzellaktivierung.info/downloads/foodlist/11_FoodList_DE_alphabetisch_mitKat.pdf"
-              target="_blank"
-              rel="noreferrer"
-              >Lebensmittel-Verträglichkeitsliste</a
-            >
-            wie die der SIGHI kann dabei helfen. Die große Datenmenge zusammen
-            mit der mehrstufigen Verträglichkeitsskala unterstützt bei der
-            Navigation. Die Usability der PDF-Datei ist jedoch gerade auf dem
-            Smartphone unzufriedenstellend: Die Suche nach einem bestimmten
-            Lebensmittel filtert nicht auf gefundene Einträge, sondern springt
-            zwischen den Ergebnissen; eine schnelle Übersicht ist nicht gegeben
-            und auch der Zugriff selbst auf die PDF-Datei ist umständlich.
-          </p>
-          <p>
-            Um diese Hindernisse zu beseitigen, wurde Histmain-Suche entwickelt.
-            Die Datengrundlage entspricht der Verträglichkeitsliste des SIGHI.
-            Die Website lässt sich auf den Hoemscreen installieren und das
-            zentrale Suchfeld ermöglicht eine schnelle Filterung der Ergebnisse
-            ohne ablenkende Zwischenschritte, mobil als auch auf Desktop.
-          </p>
-        </div>
-        <div class="details--substance-name">Such-Befehle</div>
         <p>
-          Im Suchfeld können folgende Befehle verwendet werden, um bspw. nach
-          Kategorien oder Verträglichkeiten zu suchen:
+          Um diese Hindernisse zu beseitigen, wurde Histamin-Suche entwickelt.
+          Die Datengrundlage entspricht der Verträglichkeitsliste des SIGHI. Die
+          Website lässt sich auf den Homescreen installieren und das zentrale
+          Suchfeld ermöglicht eine schnelle Filterung der Ergebnisse ohne
+          ablenkende Zwischenschritte, mobil als auch auf Desktop.
         </p>
-        <div class="substance">
-          <div class="search-command digest-u">:frei</div>
-          <div class="substance--name">
-            Lebensmittel ohne Histamin, andere Amine, Liberatoren oder Blocker.
-          </div>
+      </div>
+      <div class="details--substance-name">Such-Befehle</div>
+      <p>
+        Im Suchfeld können folgende Befehle verwendet werden, um bspw. nach
+        Kategorien oder Verträglichkeiten zu suchen:
+      </p>
+      <div class="substance">
+        <div class="search-command digest-u">:frei</div>
+        <div class="substance--name">
+          Lebensmittel ohne Histamin, andere Amine, Liberatoren oder Blocker.
         </div>
-        <div class="substance">
-          <div>
-            <div class="search-command digest-u">:gut</div>
-            <div class="search-command digest-u">:ok</div>
-          </div>
-          <div class="substance--name">
-            Lebensmittel mit Verträglichkeitsstufe 0 und ohne Histamin, andere
-            Amine, Liberatoren oder Blocker.
-          </div>
+      </div>
+      <div class="substance">
+        <div>
+          <div class="search-command digest-u">:gut</div>
+          <div class="search-command digest-u">:ok</div>
         </div>
-        <div class="substance">
-          <div class="search-command digest-u">:c</div>
-          <div class="substance--name">
-            Kategorie (category), z.B. "Tierisch", "Pflanzlich", "Getränke",
-            "Zusatzstoffe", "Zubereitungen", "Vitamine, Mineralstoffe,
-            Spurenelemente, Stimulantien".<br /><br />
-            Es kann nach mehreren Kategorien gesucht werden, z.B. ":c
-            Pflanzlich, Getränke"
-          </div>
+        <div class="substance--name">
+          Lebensmittel mit Verträglichkeitsstufe 0 und ohne Histamin, andere
+          Amine, Liberatoren oder Blocker.
         </div>
-        <div class="substance">
-          <div class="search-command digest-u">:sc</div>
-          <div class="substance--name">
-            Unterkategorie (subcategory), z.B. "Zusatzstoffe", "Zubereitungen",
-            "Milchersatz", "alkoholhaltige", "Tee", "Würzen, Gewürze", "Wasser",
-            "Pilze und Algen", "Süssungsmittel", "Früchte", "Samen, Kerne",
-            "Gemüse", "Küchenkräuter", "Nüsse", "Fette und Öle",
-            "Meeresfrüchte", "Stärkelieferanten", "Fleisch", "Fisch", "Eier",
-            "Milchprodukte", "Fruchtsäfte, Nektare", "Gemüsesäfte",
-            "Koffeingetränke", "Süssgetränke, Limonaden", "Vitamine,
-            Mineralstoffe, Spurenelemente, Stimulantien".<br /><br />
-            Es kann nach mehreren Unterkategorien gesucht werden, z.B. ":sc
-            Früchte, Tee"
-          </div>
+      </div>
+      <div class="substance">
+        <div class="search-command digest-u">:c</div>
+        <div class="substance--name">
+          Kategorie (category), z.B. "Tierisch", "Pflanzlich", "Getränke",
+          "Zusatzstoffe", "Zubereitungen", "Vitamine, Mineralstoffe,
+          Spurenelemente, Stimulantien".<br /><br />
+          Es kann nach mehreren Kategorien gesucht werden, z.B. ":c Pflanzlich,
+          Getränke"
         </div>
-        <div class="substance">
-          <div class="search-command digest-u">:halb</div>
-          <div class="substance--name">
-            Suche nach Lebensmittel mit Histamin, anderen Aminen, Liberatoren
-            oder Blocker. Es kann auch einzeln danach gesucht werden, z.B. ":h"
-            nach Histamin oder ":ab" nach anderen Aminen oder Blockern.
-          </div>
+      </div>
+      <div class="substance">
+        <div class="search-command digest-u">:sc</div>
+        <div class="substance--name">
+          Unterkategorie (subcategory), z.B. "Zusatzstoffe", "Zubereitungen",
+          "Milchersatz", "alkoholhaltige", "Tee", "Würzen, Gewürze", "Wasser",
+          "Pilze und Algen", "Süssungsmittel", "Früchte", "Samen, Kerne",
+          "Gemüse", "Küchenkräuter", "Nüsse", "Fette und Öle", "Meeresfrüchte",
+          "Stärkelieferanten", "Fleisch", "Fisch", "Eier", "Milchprodukte",
+          "Fruchtsäfte, Nektare", "Gemüsesäfte", "Koffeingetränke",
+          "Süssgetränke, Limonaden", "Vitamine, Mineralstoffe, Spurenelemente,
+          Stimulantien".<br /><br />
+          Es kann nach mehreren Unterkategorien gesucht werden, z.B. ":sc
+          Früchte, Tee"
         </div>
-        <div class="footer">
-          <p>
-            <a
-              href="https://github.com/moinahoi/histamin-suche"
-              target="_blank"
-              rel="noreferrer"
-              >GitHub</a
-            >
-            |
-            <a href="https://www.moinahoi.com" target="_blank" rel="noreferrer"
-              >Web</a
-            >
-          </p>
-          <p>made with ♥ by moinahoi</p>
+      </div>
+      <div class="substance">
+        <div class="search-command digest-u">:halb</div>
+        <div class="substance--name">
+          Suche nach Lebensmittel mit Histamin, anderen Aminen, Liberatoren oder
+          Blocker. Es kann auch einzeln danach gesucht werden, z.B. ":h" nach
+          Histamin oder ":ab" nach anderen Aminen oder Blockern.
         </div>
       </div>
     </div>
@@ -678,21 +620,19 @@
       class="details--page details--hidden"
       onClick="hideDetails()"
     >
-      <div class="wrapper">
-        <div class="info">x</div>
-        <div id="details--substance-name" class="details--substance-name"></div>
-        <div id="details--halb" class="details--halb"></div>
-        <div id="details--comment-header" class="details--comment-header">
-          Kommentar
-        </div>
-        <div id="details--comment" class="details--comment"></div>
+      <div class="info">x</div>
+      <div id="details--header" class="details--header">
+        <div id="details--header-title" class="details--header-title"></div>
+        <div id="details--halb" class="details--halb digest-u"></div>
       </div>
+      <div id="details--comment" class="wrapper"></div>
     </div>
     <div
       id="details"
       class="details-overlay details--hidden"
       onClick="hideDetails()"
     ></div>
+
     <div class="content">
       <div class="info" onclick="toggleInfo()">i</div>
       <header class="section section--header">
@@ -733,7 +673,7 @@
               >Web</a
             >
           </p>
-          <p>made with ♥ by moinahoi (v1.5)</p>
+          <p>made with ♥ by moinahoi (v1.6)</p>
         </div>
       </footer>
     </div>
@@ -749,14 +689,10 @@
       let detailsPage = document.getElementById("details--page");
       let info = document.getElementById("info");
       let infoPage = document.getElementById("info--page");
-      let detailsSubstanceName = document.getElementById(
-        "details--substance-name"
-      );
+      let detailsHeaderTitle = document.getElementById("details--header-title");
+      let detailsHeader = document.getElementById("details--header");
       let detailsHalb = document.getElementById("details--halb");
       let detailsComment = document.getElementById("details--comment");
-      let detailsCommentHeader = document.getElementById(
-        "details--comment-header"
-      );
       let notification = document.getElementById("notification");
       let reload = document.getElementById("reload");
       let data;
@@ -954,21 +890,27 @@
       function showDetails(id) {
         let element = data.find((substance) => substance.id == id);
 
-        detailsSubstanceName.innerHTML = element.substance;
-        detailsHalb.className =
-          "details--halb " + translateDigestToClass(element.digestibility);
-        detailsHalb.innerHTML =
-          element.histamine +
-          element.otherAmine +
-          element.liberator +
-          element.blocker;
+        detailsHeader.className =
+          "details--header " + translateDigestToClass(element.digestibility);
+        detailsHeaderTitle.innerHTML = element.substance;
+
+        if (
+          element.histamine ||
+          element.otherAmine ||
+          element.liberator ||
+          element.blocker
+        ) {
+          detailsHalb.className = "details--halb digest-u";
+          detailsHalb.innerHTML =
+            element.histamine +
+            element.otherAmine +
+            element.liberator +
+            element.blocker;
+        } else {
+          detailsHalb.className = "details--hidden";
+        }
 
         detailsComment.innerHTML = element.comment;
-        if (element.comment != "") {
-          detailsCommentHeader.innerHTML = "Kommentar";
-        } else {
-          detailsCommentHeader.innerHTML = "";
-        }
 
         body.classList.toggle("noscroll");
         details.classList.toggle("details--hidden");
