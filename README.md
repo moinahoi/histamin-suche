@@ -1,6 +1,6 @@
 # Histamin-Suche
 
-![Histamin-Suche im light mode](/marketing/store/light_mode.png "Histamin-Suche (light mode)")
+![Histamin-Suche](/marketing/store/histamin-suche.jpg "Histamin-Suche")
 
 # Build Pre-Requisites
 

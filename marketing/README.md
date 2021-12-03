@@ -1,5 +1,7 @@
 # Marketing
 
+![Histamin-Suche](store/histamin-suche.jpg "Histamin-Suche")
+
 ![Histamin-Suche light mode](store/light_mode.png "Histamin-Suche light mode")
 
 ![Histamin-Suche dark mode](store/dark_mode.png "Histamin-Suche dark mode")
